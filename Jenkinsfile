@@ -1,4 +1,4 @@
-filename = 'SpringDataRestBoot-0.0.1-SNAPSHOT'
+sh "export filename='SpringDataRestBoot-0.0.1-SNAPSHOT'"
 
 pipeline {
     agent any
