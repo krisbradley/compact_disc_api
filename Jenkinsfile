@@ -1,5 +1,3 @@
-sh "export filename='SpringDataRestBoot-0.0.1-SNAPSHOT'"
-
 pipeline {
     agent any
     tools {
@@ -13,6 +11,7 @@ pipeline {
         }
         stage('📬 Delivery') {
             steps {
+                sh "export filename='SpringDataRestBoot-0.0.1-SNAPSHOT'"
                 sh 'aws s3 cp target/${filename}.jar s3://allstatejenkinss3/${filename}.jar --region eu-west-1'
             }
         }
