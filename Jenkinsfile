@@ -19,9 +19,9 @@ pipeline {
         stage('✅ Deploy') {
             steps {
                 sh '''
-                    aws cloudformation create-stack --template-body  file://scripts/testmaker_cloudformation.template --stack-name TestEngine --capabilities CAPABILITY_IAM --region eu-west-1
-                    aws cloudformation wait stack-create-complete --stack-name TestEngine --region eu-west-1 
-                    aws cloudformation describe-stack-events --stack-name TestEngine --region eu-west-1
+                    aws cloudformation create-stack --template-body  file://example.template --stack-name CdApi --capabilities CAPABILITY_IAM --region eu-west-1
+                    aws cloudformation wait stack-create-complete --stack-name CdApi --region eu-west-1 
+                    aws cloudformation describe-stack-events --stack-name CdApi --region eu-west-1
                 '''
             }
         }
