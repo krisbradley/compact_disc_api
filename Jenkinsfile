@@ -11,8 +11,7 @@ pipeline {
         }
         stage('📬 Delivery') {
             steps {
-                sh "export filename='SpringDataRestBoot-0.0.1-SNAPSHOT'"
-                sh 'aws s3 cp target/${filename}.jar s3://allstatejenkinss3/${filename}.jar --region eu-west-1'
+                sh 'aws s3 cp target/SpringDataRestBoot-0.0.1-SNAPSHOT.jar s3://allstatejenkinss3/SpringDataRestBoot-0.0.1-SNAPSHOT.jar --region eu-west-1'
             }
         }
         stage('✅ Deploy') {
